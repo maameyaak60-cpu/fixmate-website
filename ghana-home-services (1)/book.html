@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Service - FixMate</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+     
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>FixMate</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="book.html" class="nav-link book-btn active">Book Now</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+     
+    <section class="page-header">
+        <div class="container">
+            <h1>Book a Service</h1>
+            <p>Schedule your home service appointment in just a few clicks</p>
+        </div>
+    </section>
+
+     
+    <section class="booking-section">
+        <div class="container">
+            <div class="booking-content">
+                <div class="booking-steps">
+                    <div class="step active" data-step="1">
+                        <div class="step-number">1</div>
+                        <span>Service Details</span>
+                    </div>
+                    <div class="step" data-step="2">
+                        <div class="step-number">2</div>
+                        <span>Schedule</span>
+                    </div>
+                    <div class="step" data-step="3">
+                        <div class="step-number">3</div>
+                        <span>Contact Info</span>
+                    </div>
+                    <div class="step" data-step="4">
+                        <div class="step-number">4</div>
+                        <span>Confirmation</span>
+                    </div>
+                </div>
+
+                <form class="booking-form" id="bookingForm">
+                     Step 1: Service Details 
+                    <div class="form-step active" id="step1">
+                        <h3>What service do you need?</h3>
+                        
+                        <div class="service-selection">
+                            <div class="service-option" data-service="plumbing">
+                                <i class="fas fa-wrench"></i>
+                                <h4>Plumbing</h4>
+                                <p>Pipe repairs, installations, leak fixes</p>
+                            </div>
+                            <div class="service-option" data-service="electrical">
+                                <i class="fas fa-bolt"></i>
+                                <h4>Electrical</h4>
+                                <p>Wiring, installations, repairs</p>
+                            </div>
+                            <div class="service-option" data-service="cleaning">
+                                <i class="fas fa-broom"></i>
+                                <h4>Cleaning</h4>
+                                <p>Home and office cleaning</p>
+                            </div>
+                            <div class="service-option" data-service="handyman">
+                                <i class="fas fa-hammer"></i>
+                                <h4>Handyman</h4>
+                                <p>General repairs and maintenance</p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="serviceDescription">Describe your service needs *</label>
+                            <textarea id="serviceDescription" name="serviceDescription" rows="4" required placeholder="Please provide details about what you need done..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="location">Service Location *</label>
+                            <select id="location" name="location" required>
+                                <option value="">Select your city</option>
+                                <option value="accra">Accra</option>
+                                <option value="tema">Tema</option>
+                                <option value="kasoa">Kasoa</option>
+                                <option value="kumasi">Kumasi</option>
+                                <option value="tamale">Tamale</option>
+                                <option value="takoradi">Takoradi</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">Full Address *</label>
+                            <input type="text" id="address" name="address" required placeholder="Enter your complete address">
+                        </div>
+
+                        <button type="button" class="btn btn-primary next-step">Next Step</button>
+                    </div>
+
+                     Step 2: Schedule 
+                    <div class="form-step" id="step2">
+                        <h3>When would you like the service?</h3>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="preferredDate">Preferred Date *</label>
+                                <input type="date" id="preferredDate" name="preferredDate" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="preferredTime">Preferred Time *</label>
+                                <select id="preferredTime" name="preferredTime" required>
+                                    <option value="">Select time</option>
+                                    <option value="8:00-10:00">8:00 AM - 10:00 AM</option>
+                                    <option value="10:00-12:00">10:00 AM - 12:00 PM</option>
+                                    <option value="12:00-14:00">12:00 PM - 2:00 PM</option>
+                                    <option value="14:00-16:00">2:00 PM - 4:00 PM</option>
+                                    <option value="16:00-18:00">4:00 PM - 6:00 PM</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="urgency">How urgent is this service?</label>
+                            <select id="urgency" name="urgency">
+                                <option value="normal">Normal (within 3-5 days)</option>
+                                <option value="urgent">Urgent (within 24 hours)</option>
+                                <option value="emergency">Emergency (ASAP)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-navigation">
+                            <button type="button" class="btn btn-secondary prev-step">Previous</button>
+                            <button type="button" class="btn btn-primary next-step">Next Step</button>
+                        </div>
+                    </div>
+
+                     Step 3: Contact Info 
+                    <div class="form-step" id="step3">
+                        <h3>Your Contact Information</h3>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="e.g., 0550123456">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="specialInstructions">Special Instructions</label>
+                            <textarea id="specialInstructions" name="specialInstructions" rows="3" placeholder="Any special instructions for the service provider..."></textarea>
+                        </div>
+
+                        <div class="form-navigation">
+                            <button type="button" class="btn btn-secondary prev-step">Previous</button>
+                            <button type="button" class="btn btn-primary next-step">Review Booking</button>
+                        </div>
+                    </div>
+
+                     Step 4: Confirmation 
+                    <div class="form-step" id="step4">
+                        <h3>Confirm Your Booking</h3>
+                        
+                        <div class="booking-summary">
+                            <div class="summary-section">
+                                <h4>Service Details</h4>
+                                <div class="summary-item">
+                                    <span class="label">Service:</span>
+                                    <span class="value" id="summaryService">-</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span class="label">Description:</span>
+                                    <span class="value" id="summaryDescription">-</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span class="label">Location:</span>
+                                    <span class="value" id="summaryLocation">-</span>
+                                </div>
+                            </div>
+
+                            <div class="summary-section">
+                                <h4>Schedule</h4>
+                                <div class="summary-item">
+                                    <span class="label">Date:</span>
+                                    <span class="value" id="summaryDate">-</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span class="label">Time:</span>
+                                    <span class="value" id="summaryTime">-</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span class="label">Urgency:</span>
+                                    <span class="value" id="summaryUrgency">-</span>
+                                </div>
+                            </div>
+
+                            <div class="summary-section">
+                                <h4>Contact Information</h4>
+                                <div class="summary-item">
+                                    <span class="label">Name:</span>
+                                    <span class="value" id="summaryName">-</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span class="label">Email:</span>
+                                    <span class="value" id="summaryEmail">-</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span class="label">Phone:</span>
+                                    <span class="value" id="summaryPhone">-</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="terms-agreement">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="agreeTerms" required>
+                                <span class="checkmark"></span>
+                                I agree to the <a href="#" target="_blank">Terms of Service</a> and <a href="#" target="_blank">Privacy Policy</a>
+                            </label>
+                        </div>
+
+                        <div class="form-navigation">
+                            <button type="button" class="btn btn-secondary prev-step">Previous</button>
+                            <button type="submit" class="btn btn-primary">Confirm Booking</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+     
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="fas fa-check-circle"></i>
+                <h3>Booking Confirmed!</h3>
+            </div>
+            <div class="modal-body">
+                <p>Thank you for choosing FixMate! Your service request has been submitted successfully.</p>
+                <p>We'll contact you within 2 hours to confirm the details and assign a professional to your job.</p>
+                <div class="booking-reference">
+                    <strong>Booking Reference: <span id="bookingRef">GF-2024-001</span></strong>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" onclick="closeModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+     Footer 
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>FixMate</h3>
+                    <p>Your trusted partner for professional home services across Ghana.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Plumbing</a></li>
+                        <li><a href="services.html">Electrical</a></li>
+                        <li><a href="services.html">Cleaning</a></li>
+                        <li><a href="services.html">Handyman</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="book.html">Book Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-phone"></i> 0550697670</p>
+                    <p><i class="fas fa-envelope"></i> mary.gyan@fixmate.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Accra, Ghana</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 FixMate. All rights reserved. | Developed by Mary Gyan</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
